@@ -3,7 +3,6 @@ package AdminSystemClasses;
 import bank.*;
 import static com.opensymphony.xwork2.Action.*;
 import java.math.BigDecimal;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
@@ -55,7 +54,7 @@ public class CustomerActions implements SessionAware {
             System.out.println(e.getMessage());
             return ERROR;
         }
-        
+
         s.close();
         return SUCCESS;
     }
@@ -66,29 +65,18 @@ public class CustomerActions implements SessionAware {
      * @return SUCCESS or ERROR
      */
     public String edit() {
-         System.out.println("action called");
+        this.customerId = (Integer)this.sessionMap.get("sessionCustomer");
+        this.accountId = (Integer)this.sessionMap.get("sessionAccount");
+        
         BankCustomer cus = new BankCustomer(this.customerId, getCustomerName(), getCustomerEmail(), getCustomerAddress(), getCustomerCity(), getCustomerState());
         Session s = DB.getSession();
         Criteria cr = s.createCriteria(BankAccount.class);
-        // check that accountId isn't null here.
-        System.out.println(this.accountId);
-        System.out.println(this.customerId);
         cr.add(Restrictions.eq("accountid", this.accountId));
-          System.out.println("criteria returns something");
-
-          System.out.println("list created");
         BankAccount acct = (BankAccount) cr.uniqueResult();
-        System.out.println("*********************************Hello From Edit************************************************");
-        System.out.println(this.accountId);
-        System.out.println("*************************************Goodbye From Edit********************************************");
         acct.setPin(this.pin);
-
-       // Iterator iterator = results.iterator();
-        // acct = (BankAccount) iterator.next();
         cus.addBankAccount(acct);
 
         Transaction t = s.beginTransaction();
-
         try {
             s.update(cus);
             s.update(acct);
@@ -109,7 +97,6 @@ public class CustomerActions implements SessionAware {
      * @return SUCCESS or ERROR
      */
     public String getCustomerInfo() {
-        //System.out.println("println testing works");
         Session s = DB.getSession();
         Criteria cr = s.createCriteria(BankCustomer.class);
         cr.add(Restrictions.eq("id", getCustomerId()));
@@ -121,36 +108,24 @@ public class CustomerActions implements SessionAware {
             cus = (BankCustomer) l.get(0);
             acct = (BankAccount) cus.getBankaccounts().toArray()[0];
             assert acct != null;
-
-        } catch (HibernateException e) {
+        } catch(HibernateException e) {
             return ERROR;
         }
-         
-        this.sessionMap.put("sessionAccount", acct);
-        this.sessionMap.put("sessionCustomer", cus);
-        
-        this.setAccountId(acct.getAccountid());
 
+        this.sessionMap.put("sessionAccount", acct.getAccountid());
+        this.sessionMap.put("sessionCustomer", cus.getId());
+
+        this.setAccountId(acct.getAccountid());
         this.setPin(acct.getPin());
-
         this.setCardnumber(acct.getCardnumber());
-
         this.setCustomerName(cus.getName());
-
         this.setCustomerEmail(cus.getEmail());
-
         this.setCustomerAddress(cus.getAddress());
-
         this.setCustomerCity(cus.getCity());
-
         this.setCustomerState(cus.getState());
-
         this.setAccountId(acct.getAccountid());
-
         this.setBalance(acct.getBalance());
-                System.out.println("*********************************Hello From GetInfo************************************************");
-        System.out.println(this.accountId);
-        System.out.println("*************************************Goodbye From GetInfo********************************************");
+
         return SUCCESS;
     }
 
@@ -293,9 +268,10 @@ public class CustomerActions implements SessionAware {
     public void setCardnumber(String cardnumber) {
         this.cardnumber = cardnumber;
     }
-     private Map sessionMap;
+    private Map sessionMap;
+
     @Override
     public void setSession(Map<String, Object> map) {
-       this.sessionMap = map;
+        this.sessionMap = map;
     }
 }

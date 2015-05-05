@@ -12,11 +12,13 @@
     <body>
         <h1>Customer Details</h1>
         <s:property value="customerId"/><br/>
+        <s:property value="accountId"/><br/>
         <s:property value="customerName"/><br/>
         <s:property value="customerAddress"/><br/>
         <s:property value="customerCity"/><br/>
         <s:property value="customerState"/><br/>
         <s:property value="customerEmail"/><br/>
         <s:property value="pin"/><br/>
+        <s:property value="cardnumber"/><br/>
     </body>
 </html>

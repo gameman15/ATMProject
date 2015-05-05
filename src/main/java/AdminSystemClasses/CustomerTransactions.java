@@ -44,9 +44,4 @@ public class CustomerTransactions {
         s.close();
         return list;
     }
-    public static void main(String[] args) {
-//        List li = viewTransactions(1, new GregorianCalendar(2015, 3, 25).getTime(), new Date());
-//        System.out.println("Size : " + li.size());
-    }
-    
 }

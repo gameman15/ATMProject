@@ -74,7 +74,7 @@ public class EditATM extends ActionSupport{
      
           
             atm = (BankATM)sf.load(BankATM.class, getAtmId());
-        //sf.close();
+        sf.close();
         return "success";
     }
     

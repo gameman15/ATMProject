@@ -20,13 +20,13 @@
                 <label class="col-xs-12 col-sm-6 col-md-2">Account ID: </label>
                     
                 <div class="col-xs-12 col-sm-6 col-md-2">
-                    <s:textfield id="accountIdIn" label="Account ID" name="accountId" type="text" placeholder="Enter New Name" value="%{accountId}" readonly="true"/>
+                    <s:textfield id="accountIdIn" label="Account ID" name="accountId" type="text" placeholder="Enter New Name" value="%{accountId}" disabled="true" readonly="true"/>
                 </div>
             </div>
             <div class="row">
                 <label class ="col-xs-12 col-sm-6 col-md-2">Customer ID: </label>
                 <div class="col-xs-12 col-sm-6 col-md-2">    
-                    <s:textfield id="customerIdIn" label="Customer ID" name="customerId" type="text" placeholder="Enter New Name" value="%{customerId}" readonly="true"/>                    
+                    <s:textfield id="customerIdIn" label="Customer ID" name="customerId" type="text" placeholder="Enter New Name" value="%{customerId}" disabled="true" readonly="true"/>                    
                 </div>
             </div>        
             <div class="row">    

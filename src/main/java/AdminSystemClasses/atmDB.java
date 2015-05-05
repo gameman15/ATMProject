@@ -57,7 +57,7 @@ public class atmDB extends ActionSupport {
      
        sf.save(myatm);
         tx.commit();
-        //sf.close();
+        sf.close();
       return myatm;
     }
     
@@ -95,7 +95,7 @@ public class atmDB extends ActionSupport {
             sf.saveOrUpdate(bank);
             tx.commit();
 //        }
-        //sf.close();
+        sf.close();
 
         return bank;
     }
