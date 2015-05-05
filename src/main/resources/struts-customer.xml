@@ -10,13 +10,11 @@
             class="AdminSystemClasses.CustomerActions" 
             method="add">
             <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
-            <result name="error">/adminSite/Customer/ShowCustomer.jsp</result>
         </action>
         <action name="editCustomer" 
             class="AdminSystemClasses.CustomerActions" 
             method="edit">
             <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
-            <result name="error">/adminSite/Customer/ShowCustomer.jsp</result>
             <result name="delete">/adminSite/Customer/CustomerDeleted.jsp</result>
         </action>
         <action name="enterEdit" 
