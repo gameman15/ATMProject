@@ -15,17 +15,17 @@
                 <interceptor-ref name="defaultStack"/>
             </interceptor-stack>
         </interceptors>
-        
-        <global-exception-mappings>
-            <exception-mapping name="generalException" exception="java.lang.Exception" result="error"/>
-        </global-exception-mappings>
-        
-        <!--<default-interceptor-ref name="loginStack"/>-->
+
+        <default-interceptor-ref name="loginStack"/>
         
         <global-results>
             <result name="login">/adminSite/login.jsp</result>
             <result name="error">/adminSite/error.jsp</result>
         </global-results>
+        
+        <!--<global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>-->
         
         <action
             name="AdminLogin"
