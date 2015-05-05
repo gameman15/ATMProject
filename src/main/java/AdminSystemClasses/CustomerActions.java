@@ -82,9 +82,10 @@ public class CustomerActions extends ActionSupport implements SessionAware {
             s.update(cus);
             s.update(acct);
             t.commit();
-        } catch(HibernateException e) {
+        } catch(Exception e) {
             t.rollback();
             s.close();
+            addActionError("Error communicating with database<br>Customer not added");
             return ERROR;
         }
 

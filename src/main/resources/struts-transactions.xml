@@ -2,9 +2,7 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-    <constant name="struts.ui.theme" value="simple"/>
-
-    <package name="AdminSystemClasses" extends="struts-default">
+    <package name="AdminSystemClasses" extends="StructsIntercepts">
         <action name="customerTransaction" 
             class="AdminSystemClasses.CustomerTransactionsAction" 
             method="execute">

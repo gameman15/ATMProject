@@ -8,26 +8,43 @@
 
     <package name="StructsIntercepts" extends="struts-default">
         
+        <interceptors>
+            <interceptor class="LoginValidatior" name="loginInterceptor"/>
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="loginInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        
+        <default-interceptor-ref name="loginStack"/>
+        
+        <global-results>
+            <result name="login">/adminSite/login.jsp</result>
+        </global-results>
+        
         <action
             name="AdminLogin"
             class="StructsIntercepts.AdminLogin"
             method="execute"
         >
-            <result name="input">admin.jsp</result>
-            <result name="loginFail">admin.jsp</result>
-            <result name="loginSuccess">navigation_bar.html</result>
+            <interceptor-ref name="defaultStack"/>
+            <result name="input">/adminSite/login.jsp</result>
+            <result name="loginFail">/adminSite/login.jsp</result>
+            <result name="loginSuccess">/adminSite/navigation_bar.html</result>
         </action>
         <action
             name="AdminLogout"
             class="StructsIntercepts.AdminLogout"
             method="execute"
         >
-            <result name="input">admin.jsp</result>
-            <result name="success">admin.jsp</result>
+            <result name="input">/adminSite/login.jsp</result>
+            <result name="success">/adminSite/login.jsp</result>
         </action>
         
     </package>
-      <include file="struts-transactions.xml"></include>    
-      <include file="struts-atm-admin.xml"></include>
-      <include file="struts-customer.xml"></include>
+    
+      <include file="struts-transactions.xml"/>
+      <include file="struts-atm-admin.xml"/>
+      <include file="struts-customer.xml"/>
+      
 </struts>

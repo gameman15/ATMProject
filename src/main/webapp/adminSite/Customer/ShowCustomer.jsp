@@ -11,6 +11,7 @@
     </head>
     <body>
         <h1>Customer Details</h1>
+        <h4 style="color: red"><s:actionerror name="error"/></h4>
         <s:property value="customerId"/><br/>
         <s:property value="accountId"/><br/>
         <s:property value="customerName"/><br/>

@@ -18,12 +18,12 @@
         <form action="AdminLogin" method="post">
           <div class="row">  
             <label class="col-xs-12 col-sm-6 col-md-2 col-lg-1">UserName: </label>
-            <input class="col-xs-12 col-sm-6 col-md-2 col-lg-1" type="text" name="username" required="true"/>
+            <input class="col-xs-12 col-sm-6 col-md-2 col-lg-1" type="text" name="username" required/>
           </div>
             
           <div class ="row">  
             <label class="col-xs-12 col-sm-6 col-md-2 col-lg-1">Password: </label>
-            <input class="col-xs-12 col-sm-6 col-md-2 col-lg-1" type="password" name="password" required="true"/>
+            <input class="col-xs-12 col-sm-6 col-md-2 col-lg-1" type="password" name="password" required/>
           </div>
             <input class="row col-xs-12 col-sm-6 col-md-2 col-lg-1 btn btn-primary" type="submit"/>
         </form>

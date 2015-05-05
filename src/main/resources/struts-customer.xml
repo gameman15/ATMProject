@@ -4,27 +4,27 @@
 
  
 <struts>
-    <constant name="struts.ui.theme" value="simple"/>
-    
-    <package name="customer" extends="struts-default">
-    <action name="addCustomer" 
+    <package name="customer" extends="StructsIntercepts">
+        
+        <action name="addCustomer" 
             class="AdminSystemClasses.CustomerActions" 
             method="add">
-        <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
-        <result name="error">/adminSite/Customer/CustomerError.jsp</result>
-    </action>
-    <action name="editCustomer" 
-                class="AdminSystemClasses.CustomerActions" 
-                method="edit">
-        <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
-        <result name="error">/adminSite/Customer/CustomerError.jsp</result>
-	<result name="delete">/adminSite/Customer/CustomerDeleted.jsp</result>
-    </action>
-    <action name="enterEdit" 
-                class="AdminSystemClasses.CustomerActions" 
-                method="getCustomerInfo">
-        <result name="success">/adminSite/Customer/EditCustomer.jsp</result>
-        <result name="error">/adminSite/Customer/EnterEditCustomer.jsp</result>
-    </action>
+            <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
+            <result name="error">/adminSite/Customer/ShowCustomer.jsp</result>
+        </action>
+        <action name="editCustomer" 
+            class="AdminSystemClasses.CustomerActions" 
+            method="edit">
+            <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
+            <result name="error">/adminSite/Customer/ShowCustomer.jsp</result>
+            <result name="delete">/adminSite/Customer/CustomerDeleted.jsp</result>
+        </action>
+        <action name="enterEdit" 
+            class="AdminSystemClasses.CustomerActions" 
+            method="getCustomerInfo">
+            <result name="success">/adminSite/Customer/EditCustomer.jsp</result>
+            <result name="error">/adminSite/Customer/EnterEditCustomer.jsp</result>
+        </action>
+    
     </package>
 </struts>

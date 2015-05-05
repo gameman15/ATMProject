@@ -5,16 +5,15 @@
 <!-- Author: AF5024443 -->
  
 <struts>
-    <constant name="struts.ui.theme" value="simple"/>
 
-    <package name="ATMadmin" extends="struts-default">
+    <package name="ATMadmin" extends="StructsIntercepts">
         
        <action
             name="ATMaddmoddel"
             class="AdminSystemClasses.ATMaddmoddel"
             method="execute"
         >
-            <result name="input">addATM.jsp</result>
+            <result name="input">/adminSite/ATM/addATM.jsp</result>
             <result name="success">addAtmSuccess.jsp</result>
         </action>
     <action
@@ -22,24 +21,24 @@
             class="AdminSystemClasses.EditATM"
             method="execute"
         >
-            <result name="input">Edit.jsp</result>
-            <result name="success">editResults.jsp</result>
+            <result name="input">/adminSite/ATM/Edit.jsp</result>
+            <result name="success">/adminSite/ATM/editResults.jsp</result>
     </action>
     <action
             name="EditATM1"
             class="AdminSystemClasses.EditATM"
             method="editTable"
         >
-            <result name="input">editResults.jsp</result>
-            <result name="success">editResults.jsp</result>
+            <result name="input">/adminSite/ATM/editResults.jsp</result>
+            <result name="success">/adminSite/ATM/editResults.jsp</result>
     </action>
         <action
             name="DeleteATM"
             class="AdminSystemClasses.DeleteATM"
             method="execute"
         >
-            <result name="input">Delete.jsp</result>
-            <result name="success">deleteResults.jsp</result>
+            <result name="input">/adminSite/ATM/Delete.jsp</result>
+            <result name="success">/adminSite/ATM/deleteResults.jsp</result>
     </action>
     
     
