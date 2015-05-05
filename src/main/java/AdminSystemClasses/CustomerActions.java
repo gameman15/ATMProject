@@ -49,7 +49,7 @@ public class CustomerActions extends ActionSupport implements SessionAware {
             s.save(cus);
             s.save(acct);
             t.commit();
-        } catch (HibernateException e) {
+        } catch (Exception e) {
             t.rollback();
             s.close();
             System.out.println(e.getMessage());
