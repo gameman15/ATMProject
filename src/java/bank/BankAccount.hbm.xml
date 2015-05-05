@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2015 10:35:46 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+  <class name="bank.BankAccount" schema="SYSTEM" table="BANKACCOUNT">
+    <id name="accountid" type="integer">
+      <column name="ACCOUNTID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="bank.BankCustomer" fetch="select" name="bankcustomer">
+      <column name="CUSTOMERID" not-null="true" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="balance" type="big_decimal">
+      <column name="BALANCE" not-null="true" precision="22" scale="0"/>
+    </property>
+    <property name="pin" type="string">
+      <column length="4" name="PIN" not-null="true"/>
+    </property>
+    <property name="cardnumber" type="string">
+      <column length="16" name="CARDNUMBER" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="banktransactions" table="BANKTRANSACTION">
+      <key>
+        <column name="ACCOUNTID" not-null="true" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="bank.BankTransaction"/>
+    </set>
+  </class>
+</hibernate-mapping>

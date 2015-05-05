@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2015 10:35:46 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+  <class name="bank.BankATM" schema="SYSTEM" table="BANKATM">
+    <id name="id" type="integer">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="bank.BankBranch" fetch="select" name="bankbranch">
+      <column name="BRANCHID" not-null="true" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="till" type="big_decimal">
+      <column name="TILL" not-null="true" precision="22" scale="0"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="banktransactions" table="BANKTRANSACTION">
+      <key>
+        <column name="ATMID" precision="22" scale="0"/>
+      </key>
+      <one-to-many class="bank.BankTransaction"/>
+    </set>
+  </class>
+</hibernate-mapping>

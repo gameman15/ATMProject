@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2015 10:35:46 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+  <class name="bank.BankAdmin" schema="SYSTEM" table="BANKADMIN">
+    <id name="id" type="integer">
+      <column name="ID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="bank.BankBranch" fetch="select" name="bankbranch">
+      <column name="BRANCHID" not-null="true" precision="22" scale="0"/>
+    </many-to-one>
+    <property name="name" type="string">
+      <column length="40" name="NAME" not-null="true"/>
+    </property>
+    <property name="username" type="string">
+      <column length="20" name="USERNAME" not-null="true"/>
+    </property>
+    <property name="pass" type="string">
+      <column length="64" name="PASS" not-null="true"/>
+    </property>
+    <property name="address" type="string">
+      <column length="80" name="ADDRESS" not-null="true"/>
+    </property>
+    <property name="city" type="string">
+      <column length="40" name="CITY" not-null="true"/>
+    </property>
+    <property name="state" type="string">
+      <column length="2" name="STATE" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

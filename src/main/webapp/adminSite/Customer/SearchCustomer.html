@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Enter Search Terms</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+    <form method="POST">
+        <h3 class="title">Enter Search Terms</h3>
+        <table class="form">
+            
+            <tr>
+                <th class="1">
+                    Customer ID:
+                </th>
+                <th class="2">
+                    <input name="customerID" type="text" placeholder="Enter Customer ID">
+                </th>
+            </tr>
+            
+            <tr>
+                <th class="1">
+                    Customer Name:
+                </th>
+                <th class="2">
+                    <input name="customerName" type="text" placeholder="Enter Name">
+                </th>
+            </tr>
+            
+            <tr>
+                <th class="1">
+                    Customer Address:
+                </th>
+                <th class="2">
+                    <input name="customerAddress" type="text" placeholder="Enter Address">
+                </th>
+            </tr>
+            
+            <tr>
+                <th class="1">
+                    Customer Email:
+                </th>
+                <th class="2">
+                    <input name="customerEmail" type="email" placeholder="Enter Email">
+                </th>
+            </tr>
+            
+            <tr>
+                <th class="button1">
+                    <button id="cancel" name="cancel" value="Cancel" onclick="myFunction()">Cancel</button>
+                </th>
+                <th class="button2">
+                    <button id="submit" name="submit" type="submit" value="Submit" onclick="myFunction()" >Submit</button>
+                </th>
+            </tr>
+            
+        </table>
+    </form>
+
+</body>
+</html>

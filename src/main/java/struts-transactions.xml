@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.ui.theme" value="simple"/>
+
+    <package name="AdminSystemClasses" extends="struts-default">
+        <action name="customerTransaction" 
+            class="AdminSystemClasses.CustomerTransactionsAction" 
+            method="execute">
+            <result name="success">/adminSite/Customer/CustTransactionLog.jsp</result>
+        </action>
+        
+        <action name="AtmTransaction" 
+            class="AdminSystemClasses.ATMTransactionsAction"
+            method="execute">
+            <result name="success">/adminSite/ATM/ATMTransactionLog.jsp</result>
+        </action>
+    </package>
+</struts>

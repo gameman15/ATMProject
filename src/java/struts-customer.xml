@@ -1,0 +1,30 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+ 
+<struts>
+    <constant name="struts.ui.theme" value="simple"/>
+    
+    <package name="customer" extends="struts-default">
+    <action name="addCustomer" 
+            class="AdminSystemClasses.CustomerActions" 
+            method="add">
+        <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
+        <result name="error">/adminSite/Customer/CustomerError.jsp</result>
+    </action>
+    <action name="editCustomer" 
+                class="AdminSystemClasses.CustomerActions" 
+                method="edit">
+        <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
+        <result name="error">/adminSite/Customer/CustomerError.jsp</result>
+	<result name="delete">/adminSite/Customer/CustomerDeleted.jsp</result>
+    </action>
+    <action name="enterEdit" 
+                class="AdminSystemClasses.CustomerActions" 
+                method="getCustomerInfo">
+        <result name="success">/adminSite/Customer/EditCustomer.jsp</result>
+        <result name="error">/adminSite/Customer/CustomerError.jsp</result>
+    </action>
+    </package>
+</struts>

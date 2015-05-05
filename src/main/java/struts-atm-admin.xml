@@ -1,0 +1,47 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: AF5024443 -->
+ 
+<struts>
+    <constant name="struts.ui.theme" value="simple"/>
+
+    <package name="ATMadmin" extends="struts-default">
+        
+       <action
+            name="ATMaddmoddel"
+            class="AdminSystemClasses.ATMaddmoddel"
+            method="execute"
+        >
+            <result name="input">addATM.jsp</result>
+            <result name="success">addAtmSuccess.jsp</result>
+        </action>
+    <action
+            name="EditATM"
+            class="AdminSystemClasses.EditATM"
+            method="execute"
+        >
+            <result name="input">Edit.jsp</result>
+            <result name="success">editResults.jsp</result>
+    </action>
+    <action
+            name="EditATM1"
+            class="AdminSystemClasses.EditATM"
+            method="editTable"
+        >
+            <result name="input">editResults.jsp</result>
+            <result name="success">editResults.jsp</result>
+    </action>
+        <action
+            name="DeleteATM"
+            class="AdminSystemClasses.DeleteATM"
+            method="execute"
+        >
+            <result name="input">Delete.jsp</result>
+            <result name="success">deleteResults.jsp</result>
+    </action>
+    
+    
+    </package>
+</struts>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Add New Customer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+    <form method="POST">
+        <h1 class="title">Enter New Customer</h1>
+        <table id="editCustomer" class="form">
+        
+        <tr>
+            <th class="1">
+                Customer Name:
+            </th>
+            <th class="2">
+                <input id="customerNameIn" name="customerName" type="text" placeholder="Enter New Name">
+            </th>
+        </tr>
+        
+        <tr>
+            <th class="1">
+                Customer Address:
+            </th>
+            <th class="2">
+                <input id="customerAddressIn" name="customerAddress" type="text" placeholder="Enter New Address">
+            </th>
+        </tr>
+        
+        <tr>
+            <th class="1">
+                Customer Email:
+            </th>
+            <th class="2">
+                <input id="customerEmailIn" name="customerEmail" type="email" placeholder="Enter New Email">
+            </th>
+        </tr>
+        
+        <tr>
+            <th class="button1">
+                <button id="cancel" name="cancel" value="Cancel" onclick="myFunction()">Cancel</button>
+            </th>
+            <th class="button2">
+                <button id="submit" name="submit" type="submit" value="Submit" onclick="myFunction()" >Submit</button>
+            </th>
+        </tr>
+        
+    </table>
+    </form>
+
+</body>
+</html>

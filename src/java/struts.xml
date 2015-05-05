@@ -1,0 +1,33 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+    <constant name="struts.ui.theme" value="simple"/>
+
+    <package name="StructsIntercepts" extends="struts-default">
+        
+        <action
+            name="AdminLogin"
+            class="StructsIntercepts.AdminLogin"
+            method="execute"
+        >
+            <result name="input">admin.jsp</result>
+            <result name="loginFail">admin.jsp</result>
+            <result name="loginSuccess">navigation_bar.html</result>
+        </action>
+        <action
+            name="AdminLogout"
+            class="StructsIntercepts.AdminLogout"
+            method="execute"
+        >
+            <result name="input">admin.jsp</result>
+            <result name="success">admin.jsp</result>
+        </action>
+        
+    </package>
+      <include file="struts-transactions.xml"></include>    
+      <include file="struts-atm-admin.xml"></include>
+      <include file="struts-customer.xml"></include>
+</struts>
