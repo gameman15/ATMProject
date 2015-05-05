@@ -21,6 +21,9 @@
                     
                 <input class="col-xs-12 col-sm-6 col-md-2 col-lg-1" id="customerIdIn" name="customerId" type="text" placeholder="Enter ID">
             </div>
+            <div>
+                <s:fielderror name="customerId"/>
+            </div>
             <input class="row col-xs-12 col-sm-6 col-md-2 col-lg-1 btn btn-primary" type="submit"/>
 
         </form>

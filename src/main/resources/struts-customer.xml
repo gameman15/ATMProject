@@ -24,7 +24,7 @@
                 class="AdminSystemClasses.CustomerActions" 
                 method="getCustomerInfo">
         <result name="success">/adminSite/Customer/EditCustomer.jsp</result>
-        <result name="error">/adminSite/Customer/CustomerError.jsp</result>
+        <result name="error">/adminSite/Customer/EnterEditCustomer.jsp</result>
     </action>
     </package>
 </struts>

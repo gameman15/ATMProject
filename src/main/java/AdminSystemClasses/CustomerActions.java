@@ -2,6 +2,7 @@ package AdminSystemClasses;
 
 import bank.*;
 import static com.opensymphony.xwork2.Action.*;
+import com.opensymphony.xwork2.ActionSupport;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ import org.hibernate.criterion.Restrictions;
  *
  * @author MB5024473
  */
-public class CustomerActions implements SessionAware {
+public class CustomerActions extends ActionSupport implements SessionAware {
 
     private Integer customerId;
     private String customerName;
@@ -81,7 +82,7 @@ public class CustomerActions implements SessionAware {
             s.update(cus);
             s.update(acct);
             t.commit();
-        } catch (HibernateException e) {
+        } catch(HibernateException e) {
             t.rollback();
             s.close();
             return ERROR;
@@ -107,11 +108,10 @@ public class CustomerActions implements SessionAware {
         try {
             cus = (BankCustomer) l.get(0);
             acct = (BankAccount) cus.getBankaccounts().toArray()[0];
-            assert acct != null;
-        } catch(HibernateException e) {
+        } catch(IndexOutOfBoundsException e) {
+            addFieldError("customerId","Customer not found");
             return ERROR;
         }
-
         this.sessionMap.put("sessionAccount", acct.getAccountid());
         this.sessionMap.put("sessionCustomer", cus.getId());
 
