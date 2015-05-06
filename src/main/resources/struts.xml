@@ -16,7 +16,7 @@
             </interceptor-stack>
         </interceptors>
 
-        <!--<default-interceptor-ref name="loginStack"/>
+        <default-interceptor-ref name="loginStack"/>
         
         <global-results>
             <result name="login">/adminSite/login.jsp</result>
@@ -25,7 +25,7 @@
         
         <global-exception-mappings>
             <exception-mapping exception="java.lang.Exception" result="error"/>
-        </global-exception-mappings>-->
+        </global-exception-mappings>
         
         <action
             name="AdminLogin"
