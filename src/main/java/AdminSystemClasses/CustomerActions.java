@@ -74,12 +74,9 @@ public class CustomerActions extends ActionSupport implements SessionAware {
                 this.setSearchResults(idQuery.list());
             }
             s.close();
-
             return SUCCESS;
         } catch (Exception e) {
-
             return ERROR;
-
         }
 
     }
