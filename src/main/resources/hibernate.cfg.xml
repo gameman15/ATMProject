@@ -6,7 +6,8 @@
     <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
     <property name="hibernate.connection.username">system</property>
-    <property name="hibernate.connection.password">syntel123</property>
+    <property name="hibernate.connection.password">syntel123$</property>
+    <property name="hibernate.hbm2ddl.auto">validate</property>
     <mapping resource="bank/Banktransaction.hbm.xml"/>
     <mapping resource="bank/BankBranch.hbm.xml"/>
     <mapping resource="bank/BankAdmin.hbm.xml"/>

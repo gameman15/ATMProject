@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="row">
-                <label class="col-xs-6 col-sm-4 col-md-2 col-lg-1">Till ID: </label>
+                <label class="col-xs-6 col-sm-4 col-md-2 col-lg-1">Till Amount: </label>
                 <div class="col-xs-6 col-sm-4 col-md-2 col-lg-1">
                     <s:textfield type="text" label="Till Amount: " name="till" required="true"/>
                 </div>

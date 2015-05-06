@@ -6,8 +6,6 @@
 
 package AdminSystemClasses;
 import bank.BankATM;
-import bank.DB;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.math.BigDecimal;
 import org.hibernate.Session;
@@ -15,7 +13,7 @@ import org.hibernate.Transaction;
 
 
 
-public class ATMaddmoddel extends ActionSupport{
+public class ATMaddmoddel extends ActionSupport implements java.io.Serializable{
     private Integer atmId;
     private BigDecimal till;
     private Integer branchid; 
@@ -68,10 +66,22 @@ public class ATMaddmoddel extends ActionSupport{
     }
    @Override
     public String execute() throws Exception
-    {
-       atm=atmDB.addAtm(this);
-        
-        return "success";
+    { 
+        String msg=null;
+        if((getAtmId().intValue()<1) || (getBranchid().intValue()<1) || (getTill().intValue()<0))
+             msg= "failed";
+        else
+        {
+           atm=AtmDB.addAtm(this);
+           if(atm != null)
+           {       
+            msg = "success";
+           }
+           else
+               msg = "failedexist";
+        }
+           
+        return msg;
     }
 
     /**

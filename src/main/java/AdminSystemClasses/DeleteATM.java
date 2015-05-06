@@ -8,43 +8,44 @@ package AdminSystemClasses;
 
 import bank.BankATM;
 import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;;
+import com.opensymphony.xwork2.ActionSupport;import java.math.BigDecimal;
+;
 
 /**
  *
  * @author DD5024435
  */
-public class DeleteATM extends ActionSupport{
-     private Integer atmId;
-    private Integer branchid;
+public class DeleteATM extends ActionSupport implements java.io.Serializable{
+     private BigDecimal atmId;
+    private BigDecimal branchid;
     private Integer till;
     private BankATM atm= null;
 
     /**
      * @return the atmId
      */
-    public Integer getAtmId() {
+    public BigDecimal getAtmId() {
         return atmId;
     }
 
     /**
      * @param atmId the atmId to set
      */
-    public void setAtmId(Integer atmId) {
+    public void setAtmId(BigDecimal atmId) {
         this.atmId = atmId;
     }
 
     /**
      * @return the branchid
      */
-    public Integer getBranchid() {
+    public BigDecimal getBranchid() {
         return branchid;
     }
 
     /**
      * @param branchid the branchid to set
      */
-    public void setBranchid(Integer branchid) {
+    public void setBranchid(BigDecimal branchid) {
         this.branchid = branchid;
     }
 
@@ -64,9 +65,14 @@ public class DeleteATM extends ActionSupport{
     @Override
     public String execute() throws Exception
     {
-       atm = atmDB.delete(this);
+        String msg;
+       atm = AtmDB.delete(this);
+       if(atm != null)
+           msg= "success";
+       else
+           msg ="failed";
         
-        return "success";
+        return msg;
     }
 
     /**

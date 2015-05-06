@@ -26,13 +26,6 @@
                     <s:textfield type="text" label="ATM ID " name="atmId" required="true"/>
                 </div>
             </div>
-            <div class = "row">
-                    <label class="col-xs-6 col-sm-4 col-md-2 col-lg-1">Branch ID: </label>
-                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-1" >
-                        <s:textfield type="text" label="Branch ID: " name="branchid" required="true"/>
-            
-                    </div>
-            </div>
             <input class="row col-xs-12 col-sm-6 col-md-2 col-lg-1 btn btn-primary" type="submit"/>
 
             

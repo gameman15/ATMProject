@@ -27,6 +27,7 @@ public class CustomerActions extends ActionSupport implements SessionAware {
     private BigDecimal balance;
     private String pin;
     private String cardnumber;
+    private List searchResults;
 
     /**
      * Action for addCustomer form
@@ -65,10 +66,28 @@ public class CustomerActions extends ActionSupport implements SessionAware {
      *
      * @return SUCCESS or ERROR
      */
+    public String search() {
+        try {
+            Session s = DB.getSession();
+            if (this.customerName != null) {
+                Query idQuery = s.createQuery( "FROM BankCustomer WHERE name LIKE " + this.customerName);
+                this.setSearchResults(idQuery.list());
+            }
+            s.close();
+
+            return SUCCESS;
+        } catch (Exception e) {
+
+            return ERROR;
+
+        }
+
+    }
+
     public String edit() {
         this.customerId = (Integer)this.sessionMap.get("sessionCustomer");
         this.accountId = (Integer)this.sessionMap.get("sessionAccount");
-        
+
         BankCustomer cus = new BankCustomer(this.customerId, getCustomerName(), getCustomerEmail(), getCustomerAddress(), getCustomerCity(), getCustomerState());
         Session s = DB.getSession();
         Criteria cr = s.createCriteria(BankAccount.class);
@@ -274,5 +293,19 @@ public class CustomerActions extends ActionSupport implements SessionAware {
     @Override
     public void setSession(Map<String, Object> map) {
         this.sessionMap = map;
+    }
+
+    /**
+     * @return the searchResults
+     */
+    public List getSearchResults() {
+        return searchResults;
+    }
+
+    /**
+     * @param searchResults the searchResults to set
+     */
+    public void setSearchResults(List searchResults) {
+        this.searchResults = searchResults;
     }
 }

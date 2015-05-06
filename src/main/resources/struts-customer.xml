@@ -7,22 +7,28 @@
     <package name="customer" extends="StructsIntercepts">
         
         <action name="addCustomer" 
-            class="AdminSystemClasses.CustomerActions" 
-            method="add">
+                class="AdminSystemClasses.CustomerActions" 
+                method="add">
             <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
         </action>
         <action name="editCustomer" 
-            class="AdminSystemClasses.CustomerActions" 
-            method="edit">
+                class="AdminSystemClasses.CustomerActions" 
+                method="edit">
             <result name="success">/adminSite/Customer/ShowCustomer.jsp</result>
             <result name="delete">/adminSite/Customer/CustomerDeleted.jsp</result>
         </action>
         <action name="enterEdit" 
-            class="AdminSystemClasses.CustomerActions" 
-            method="getCustomerInfo">
+                class="AdminSystemClasses.CustomerActions" 
+                method="getCustomerInfo">
             <result name="success">/adminSite/Customer/EditCustomer.jsp</result>
             <result name="error">/adminSite/Customer/EnterEditCustomer.jsp</result>
         </action>
-    
+        <action name="search"
+            class="AdminSystemClasses.CustomerActions"
+            method="search">
+            <result name="success">/adminSite/Customer/SearchCustomer.jsp</result> 
+            <result name="error">/adminSite/Customer/SearchCustomer.jsp</result> 
+        </action>
+
     </package>
 </struts>

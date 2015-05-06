@@ -8,7 +8,7 @@
 
     <package name="ATMadmin" extends="StructsIntercepts">
         
-       <action
+        <action
             name="ATMaddmoddel"
             class="AdminSystemClasses.ATMaddmoddel"
             method="execute"
@@ -16,22 +16,22 @@
             <result name="input">/adminSite/ATM/addATM.jsp</result>
             <result name="success">addAtmSuccess.jsp</result>
         </action>
-    <action
+        <action
             name="EditATM"
             class="AdminSystemClasses.EditATM"
             method="execute"
         >
             <result name="input">/adminSite/ATM/Edit.jsp</result>
             <result name="success">/adminSite/ATM/editResults.jsp</result>
-    </action>
-    <action
+        </action>
+        <action
             name="EditATM1"
             class="AdminSystemClasses.EditATM"
             method="editTable"
         >
             <result name="input">/adminSite/ATM/editResults.jsp</result>
             <result name="success">/adminSite/ATM/editResults.jsp</result>
-    </action>
+        </action>
         <action
             name="DeleteATM"
             class="AdminSystemClasses.DeleteATM"
@@ -39,7 +39,16 @@
         >
             <result name="input">/adminSite/ATM/Delete.jsp</result>
             <result name="success">/adminSite/ATM/deleteResults.jsp</result>
-    </action>
+        </action>
+        <action
+            name="checksDeposit"
+            class="AdminSystemClasses.DepositedChecks"
+            method="viewChecks"
+        >
+            <result name="input">/adminSite/ATM/checksDeposit.jsp</result>
+            <result name="failed">/adminSite/ATM/checksDeposit.jsp</result>
+            <result name="success">/adminSite/ATM/checkDepositResults.jsp</result>
+        </action>
     
     
     </package>
