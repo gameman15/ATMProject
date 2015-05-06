@@ -28,6 +28,7 @@ public class CustomerActions extends ActionSupport implements SessionAware {
     private String pin;
     private String cardnumber;
     private List searchResults;
+    private Map sessionMap;
 
     /**
      * Action for addCustomer form
@@ -35,7 +36,6 @@ public class CustomerActions extends ActionSupport implements SessionAware {
      * @return SUCCESS or ERROR
      */
     public String add() {
-        System.out.println("print working");
         BankCustomer cus = new BankCustomer(getCustomerId(), getCustomerName(), getCustomerEmail(), getCustomerAddress(), getCustomerCity(), getCustomerState());
         Session s = DB.getSession();
 
@@ -70,7 +70,7 @@ public class CustomerActions extends ActionSupport implements SessionAware {
         try {
             Session s = DB.getSession();
             if (this.customerName != null) {
-                Query idQuery = s.createQuery( "FROM BankCustomer WHERE name LIKE " + this.customerName);
+                Query idQuery = s.createQuery( "FROM BankCustomer WHERE name LIKE '%" + this.customerName + "%'");
                 this.setSearchResults(idQuery.list());
             }
             s.close();
@@ -285,7 +285,6 @@ public class CustomerActions extends ActionSupport implements SessionAware {
     public void setCardnumber(String cardnumber) {
         this.cardnumber = cardnumber;
     }
-    private Map sessionMap;
 
     @Override
     public void setSession(Map<String, Object> map) {

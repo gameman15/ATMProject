@@ -8,47 +8,33 @@
 
     <package name="ATMadmin" extends="StructsIntercepts">
         
-        <action
-            name="ATMaddmoddel"
-            class="AdminSystemClasses.ATMaddmoddel"
-            method="execute"
-        >
-            <result name="input">/adminSite/ATM/addATM.jsp</result>
-            <result name="success">addAtmSuccess.jsp</result>
+        <action name="ATMaddmoddel" class="AdminSystemClasses.ATMaddmoddel" method="execute">
+            <result name="input">adminSite/ATM/addATM.jsp</result> 
+            <result name="success">adminSite/ATM/addAtmSuccess.jsp</result> 
+            <result name="failed">adminSite/ATM/ADDATMError.jsp</result> 
+            <result name="failedexist">adminSite/ATM/AddAcctExist.jsp</result> 
         </action>
-        <action
-            name="EditATM"
-            class="AdminSystemClasses.EditATM"
-            method="execute"
-        >
-            <result name="input">/adminSite/ATM/Edit.jsp</result>
-            <result name="success">/adminSite/ATM/editResults.jsp</result>
+        <action name="EditATM" class="AdminSystemClasses.EditATM" method="execute">
+            <result name="input">adminSite/ATM/Edit.jsp</result> 
+            <result name="success">editResults.jsp</result> 
+            <result name="failed">adminSite/ATM/Error.jsp</result> 
         </action>
-        <action
-            name="EditATM1"
-            class="AdminSystemClasses.EditATM"
-            method="editTable"
-        >
-            <result name="input">/adminSite/ATM/editResults.jsp</result>
-            <result name="success">/adminSite/ATM/editResults.jsp</result>
+        <action name="EditATM1" class="AdminSystemClasses.EditATM" method="editTable">
+            <result name="input">adminSite/ATM/editResults.jsp</result> 
+            <result name="success">adminSite/ATM/editSuccess.jsp</result> 
+            <result name="failed">adminSite/ATM/EditError.jsp</result> 
         </action>
-        <action
-            name="DeleteATM"
-            class="AdminSystemClasses.DeleteATM"
-            method="execute"
-        >
-            <result name="input">/adminSite/ATM/Delete.jsp</result>
-            <result name="success">/adminSite/ATM/deleteResults.jsp</result>
+        <action name="DeleteATM" class="AdminSystemClasses.DeleteATM" method="execute">
+            <result name="input">adminSite/ATM/Delete.jsp</result> 
+            <result name="success">adminSite/ATM/deleteResults.jsp</result> 
+            <result name="failed">adminSite/ATM/Error.jsp</result> 
         </action>
-        <action
-            name="checksDeposit"
-            class="AdminSystemClasses.DepositedChecks"
-            method="viewChecks"
-        >
-            <result name="input">/adminSite/ATM/checksDeposit.jsp</result>
-            <result name="failed">/adminSite/ATM/checksDeposit.jsp</result>
-            <result name="success">/adminSite/ATM/checkDepositResults.jsp</result>
+        <action name="checksDeposit" class="AdminSystemClasses.DepositedChecks" method="viewChecks">
+            <result name="input">adminSite/ATM/checksDeposit.jsp</result> 
+            <result name="success">adminSite/ATM/checkDepositResults.jsp</result> 
+            <result name="failed">adminSite/ATM/Error.jsp</result> 
         </action>
+
     
     
     </package>

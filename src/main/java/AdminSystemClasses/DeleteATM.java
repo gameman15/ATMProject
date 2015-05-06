@@ -3,23 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package AdminSystemClasses;
 
 import bank.BankATM;
 import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;import java.math.BigDecimal;
+import com.opensymphony.xwork2.ActionSupport;
+import java.math.BigDecimal;
+
 ;
 
 /**
  *
  * @author DD5024435
  */
-public class DeleteATM extends ActionSupport implements java.io.Serializable{
-     private BigDecimal atmId;
+public class DeleteATM extends ActionSupport implements java.io.Serializable {
+
+    private BigDecimal atmId;
     private BigDecimal branchid;
     private Integer till;
-    private BankATM atm= null;
+    private BankATM atm = null;
 
     /**
      * @return the atmId
@@ -62,16 +64,17 @@ public class DeleteATM extends ActionSupport implements java.io.Serializable{
     public void setTill(Integer till) {
         this.till = till;
     }
+
     @Override
-    public String execute() throws Exception
-    {
+    public String execute() throws Exception {
         String msg;
-       atm = AtmDB.delete(this);
-       if(atm != null)
-           msg= "success";
-       else
-           msg ="failed";
-        
+        atm = AtmDB.delete(this);
+        if (atm != null) {
+            msg = "success";
+        } else {
+            msg = "failed";
+        }
+
         return msg;
     }
 
@@ -88,5 +91,5 @@ public class DeleteATM extends ActionSupport implements java.io.Serializable{
     public void setAtm(BankATM atm) {
         this.atm = atm;
     }
-    
+
 }

@@ -2,25 +2,28 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated Apr 24, 2015 10:35:46 AM by Hibernate Tools 3.6.0 -->
 <hibernate-mapping>
-  <class name="bank.BankTransaction" schema="SYSTEM" table="BANKTRANSACTION">
-    <id name="id" type="integer">
-      <column name="ID" precision="22" scale="0"/>
-      <generator class="assigned"/>
-    </id>
-    <many-to-one class="bank.BankAccount" fetch="select" name="bankaccount">
-      <column name="ACCOUNTID" not-null="true" precision="22" scale="0"/>
-    </many-to-one>
-    <many-to-one class="bank.BankATM" fetch="select" name="bankatm">
-      <column name="ATMID" precision="22" scale="0"/>
-    </many-to-one>
-    <property name="time" type="date">
-      <column name="TIME" not-null="true"/>
-    </property>
-    <property name="description" type="string">
-      <column length="40" name="DESCRIPTION" not-null="true"/>
-    </property>
-    <property name="amount" type="big_decimal">
-      <column name="AMOUNT" precision="22" scale="0"/>
-    </property>
-  </class>
+    <class name="bank.BankTransaction" schema="SYSTEM" table="BANKTRANSACTION">
+        <id name="id" type="integer">
+            <column name="ID" precision="22" scale="0"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="bank.BankAccount" fetch="select" name="bankaccount">
+            <column name="ACCOUNTID" not-null="true" precision="22" scale="0"/>
+        </many-to-one>
+        <many-to-one class="bank.BankATM" fetch="select" name="bankatm">
+            <column name="ATMID" precision="22" scale="0"/>
+        </many-to-one>
+        <property name="time" type="date">
+            <column name="TIME" not-null="true"/>
+        </property>
+        <property name="description" type="string">
+            <column length="40" name="DESCRIPTION" not-null="true"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="AMOUNT" precision="22" scale="0"/>
+        </property>
+        <property name="checkNumber" type="big_decimal">
+            <column name="CHECKNUMBER" precision="22" scale="0"/>
+        </property>
+    </class>
 </hibernate-mapping>
