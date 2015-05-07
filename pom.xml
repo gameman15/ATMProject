@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>TeamB</groupId>
-    <artifactId>ATMProject</artifactId>
+    <artifactId>AdminTeamProject</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>ATMProject</name>
+    <name>AdminTeamProject</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
