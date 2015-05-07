@@ -62,26 +62,23 @@ public class CustomerActions extends ActionSupport implements SessionAware {
     }
 
     /**
-     * method mapped to search action in struts-customer.xml
+     * Action for editCustomer form
      *
      * @return SUCCESS or ERROR
      */
     public String search() {
         try {
-            // BankCustomer cus = new BankCustomer(this.customerId, getCustomerName(), getCustomerEmail(), getCustomerAddress(), getCustomerCity(), getCustomerState());
             Session s = DB.getSession();
-            Criteria cr = s.createCriteria(BankCustomer.class);
             if (this.customerName != null) {
-                // Query idQuery =   s.createQuery( "FROM BankCustomer WHERE name LIKE " + this.customerName.toString());
-                cr.add(Restrictions.eq("name", customerName));
-                // this.setSearchResults(idQuery.list());
-                this.searchResults = cr.list();
+                Query idQuery = s.createQuery( "FROM BankCustomer WHERE name LIKE '%" + this.customerName + "%'");
+                this.setSearchResults(idQuery.list());
             }
             s.close();
             return SUCCESS;
         } catch (Exception e) {
             return ERROR;
         }
+
     }
 
     public String edit() {

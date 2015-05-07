@@ -1,3 +1,7 @@
+
+<%@page import="com.opensymphony.xwork2.ActionContext"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
@@ -90,7 +94,6 @@
             <input class="col-xs-12 col-sm-6 col-md-2" id="customerEmailIn" name="customerEmail" type="email" placeholder="Enter Email">
         </div>
         <div class="btn-group">
-            <s:submit class=" btn btn-primary" id="cancel" name="cancel" value="Cancel" action="cancel">Cancel</s:submit>
             <button class=" btn btn-primary" id="submit" name="submit" type="submit" value="Submit">Submit</button>
         </div>
                 

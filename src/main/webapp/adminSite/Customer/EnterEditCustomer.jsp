@@ -15,18 +15,19 @@
     <body>
         <form action="enterEdit" method="POST">
             <h1 class="title">Edit Customer Info</h1>
-            
+
             <div class="row">
                 <label class=" col-xs-12 col-sm-6 col-md-2 col-lg-1">Customer ID: </label>
-                    
+
                 <input class="col-xs-12 col-sm-6 col-md-2 col-lg-1" id="customerIdIn" name="customerId" type="text" placeholder="Enter ID">
             </div>
             <div>
                 <s:fielderror name="customerId"/>
             </div>
             <input class="row col-xs-12 col-sm-6 col-md-2 col-lg-1 btn btn-primary" type="submit"/>
-
         </form>
-
+        <div class="text-danger">
+            <s:fielderror name="customerId"/>
+        </div>
     </body>
 </html>
