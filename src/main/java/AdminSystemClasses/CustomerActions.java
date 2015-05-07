@@ -56,8 +56,8 @@ public class CustomerActions extends ActionSupport implements SessionAware {
             System.out.println(e.getMessage());
             return ERROR;
         }
-
         s.close();
+        this.getCustomerInfo();
         return SUCCESS;
     }
 
@@ -104,8 +104,8 @@ public class CustomerActions extends ActionSupport implements SessionAware {
             addActionError("Error communicating with database<br>Customer not added");
             return ERROR;
         }
-
         s.close();
+        this.getCustomerInfo();
         return SUCCESS;
     }
 
@@ -121,6 +121,7 @@ public class CustomerActions extends ActionSupport implements SessionAware {
         List l = cr.list();
         BankCustomer cus;
         BankAccount acct;
+        System.out.println("");
 
         try {
             cus = (BankCustomer) l.get(0);

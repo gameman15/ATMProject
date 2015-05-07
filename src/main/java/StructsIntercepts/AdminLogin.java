@@ -10,7 +10,8 @@ import java.util.Map;
  *
  * @author AF5024443
  */
-public class AdminLogin extends ActionSupport{
+public class AdminLogin extends ActionSupport {
+
     private String username;
     private String password;
 
@@ -29,26 +30,22 @@ public class AdminLogin extends ActionSupport{
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
     @Override
-    public String execute()
-    {
+    public String execute() {
         Integer id = DB.checkAdminLogin(username, password);
-        
+
         Map session = ActionContext.getContext().getSession();
-        
-        if(id != null)
-        {
+
+        if (id != null) {
             session.put("id", id);
             BankAdmin admin = DB.getAdmin(id);
             session.put("name", admin.getName());
             session.put("admin", admin);
+        } else {
+            addFieldError("username", "Invalid login credentials");
         }
-        else
-        {
-            addFieldError("username", "Invalid login credentials");            
-        }
-        
+
         return (id != null ? AdminResult.loginSuccess : AdminResult.loginFail).name();
     }
 }

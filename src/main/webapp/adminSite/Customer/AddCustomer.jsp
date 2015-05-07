@@ -35,7 +35,7 @@
             <label class="col-xs-12 col-sm-6 col-md-2">Customer State:</label>
                 
             <select class="col-xs-12 col-sm-6 col-md-2" id="customerStateIn" name="customerState" required>
-                        <option value="">-</option>
+                        <option value=""></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AZ">AZ</option>
